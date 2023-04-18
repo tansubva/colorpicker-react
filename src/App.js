@@ -1,7 +1,7 @@
-import "./App.css";
-import Wrapper from './components/Wrapper' // нужно создать
-import Circle from './components/Circle' // нужно создать
 import React, { useState } from "react";
+import "./App.css";
+import Circle from "./components/Circle";
+import Wrapper from "./components/Wrapper";
 
 function App() {
   const [activeColor, setActiveColor] = useState(1);
@@ -29,14 +29,22 @@ function App() {
         setWrapperColor("#fff");
     }
   };
+
   return (
     <div className="bg" style={{ backgroundColor: wrapperColor }}>
-
       <Wrapper>
-       
-      </Wrapper>                 
+        {[1, 2, 3, 4, 5].map((num) => (
+          <Circle
+            key={num}
+            isActive={activeColor === num}
+            color={num}
+            onClick={() => handleCircleClick(num)}
+            className={`color-${num}`}
+          />
+        ))}
+      </Wrapper>
     </div>
   );
 }
 
-export default App
+export default App;

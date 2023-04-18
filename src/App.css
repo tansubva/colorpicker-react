@@ -36,6 +36,7 @@ body {
   display: flex;
   width: 60%;
   height: 200px;
+  align-items: center;
   justify-content: space-between;
   background-color: #fff;
   padding: 20px 30px;
